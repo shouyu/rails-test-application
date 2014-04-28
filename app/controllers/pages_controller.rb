@@ -64,7 +64,14 @@ class PagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
-      @page = Page.find(params[:id])
+      @page = Rails.cache.read params[:id]
+      unless @page
+        @page = Page.find(params[:id])
+        Rails.cache.write params[:id], @page
+        @page.body += ' uncached'
+      else
+        Rails.cache.delete params[:id]
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

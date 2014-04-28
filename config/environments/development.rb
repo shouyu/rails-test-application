@@ -34,4 +34,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  # parse the memcached.yml
+  memcached_config = YAML.load_file(Rails.root.join('config/memcached.yml'))
+  memcached_host = memcached_config['development']
+  ## pass the servers to dalli setup
+  config.cache_store = :dalli_store, "#{memcached_host['host']}:#{memcached_host['port']}"
 end
