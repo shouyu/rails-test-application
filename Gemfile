@@ -27,5 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'dalli'
+gem 'dalli-elasticache'
 
 gem 'unicorn', group: :production
+
+gem 'redis-rails'
