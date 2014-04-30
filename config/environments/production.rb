@@ -54,9 +54,9 @@ Rails.application.configure do
   # parse the memcached.yml
   memcached_config = YAML.load_file(Rails.root.join('config/redis.yml'))
   memcached_host = memcached_config['production']
-  elasticache = Dalli::ElastiCache.new "redis://#{memcached_host['host']}:#{memcached_host['port']}"
+  elasticache = "redis://#{memcached_host['host']}:#{memcached_host['port']}"
   ## pass the servers to dalli setup
-  config.cache_store = :redis_store, elasticache.servers
+  config.cache_store = :redis_store, elasticache
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
