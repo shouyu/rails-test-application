@@ -7,4 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Page.create(name: "aaa", body: "aaaaaaaaaaaaaaaaaaaaaaaaa")
 Page.create(name: "aaa", body: "aaaaaaaaaaaaaaaaaaaaaaaaa")
-Page.create(name: "aaa", body: "aaaaaaaaaaaaaaaaaaaaaaaaa")Page.create(name: "aaa", body: "aaaaaaaaaaaaaaaaaaaaaaaaa")
+Page.create(name: "aaa", body: "aaaaaaaaaaaaaaaaaaaaaaaaa")
+Page.create(name: "aaa", body: "aaaaaaaaaaaaaaaaaaaaaaaaa")
